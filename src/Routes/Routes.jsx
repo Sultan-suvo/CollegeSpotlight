@@ -6,11 +6,13 @@ import Admission from "../Pages/Admission/Admission";
 import MyCollege from "../Pages/MyCollege/MyCollege";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path: "/",

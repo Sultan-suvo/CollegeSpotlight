@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -13,7 +13,7 @@ const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const { createUser, signInWithGoogle } = useContext(AuthContext);
+    const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
@@ -46,7 +46,7 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
 
-                const savedUser = { name: data.displayName, email: data.email,image:data.photoURL }
+                const savedUser = { name: data.displayName, email: data.email, image: data.photoURL }
 
                 fetch('https://assignment12-server-nu.vercel.app/users', {
                     method: "POSt",
@@ -75,6 +75,18 @@ const Register = () => {
             });
     };
 
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -84,7 +96,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                const savedUser = { name: loggedUser.displayName, email: loggedUser.email ,image:loggedUser.photoURL}
+                const savedUser = { name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL }
                 fetch('https://assignment12-server-nu.vercel.app/users', {
                     method: "POSt",
                     headers: {
@@ -274,10 +286,20 @@ const Register = () => {
                         <span className="my-0 mx-[10px] font-bold text-slate-400">or</span>
                         <hr className="flex-1 border-t border-slate-200" />
                     </div>
-                    <div onClick={handleGoogleSignIn} className="flex items-center justify-center gap-[6px] w-ful; mx-6 h-[50px] border bg-blue-200 hover:bg-blue-500 border-slate-200 rounded-md cursor-pointer">
-
-                        <FaGoogle className="w-8 h-8 rounded-md" ></FaGoogle>
+                    <div
+                        onClick={handleGoogleSignIn}
+                        className="flex items-center justify-center gap-2 w-full mx-6 h-12 border bg-blue-200 hover:bg-blue-500 border-slate-200 rounded-md cursor-pointer bg-blue-500 text-white"
+                    >
+                        <FaGoogle class="w-8 h-8 rounded-md"></FaGoogle>
                         <span>Continue with Google</span>
+                    </div>
+
+                    <div
+                        onClick={handleGithubSignIn}
+                        className="flex items-center justify-center gap-2 w-full mx-6 h-12 border bg-gray-800 hover:bg-gray-900 border-slate-200 rounded-md cursor-pointer text-white"
+                    >
+                        <FaGithub class="w-8 h-8 rounded-md"></FaGithub>
+                        <span>Continue with Github</span>
                     </div>
                 </form>
                 {/* End Card with form */}

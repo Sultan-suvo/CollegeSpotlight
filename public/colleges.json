@@ -1,0 +1,116 @@
+[
+    {
+        "college_name": "ABC University",
+        "college_image": "https://i.ibb.co/0rb66YM/a.webp",
+        "college_rating": 4.5,
+        "admission_date": "2023-08-15",
+        "research_count": 120,
+        "details": {
+            "events": [
+                "Annual Cultural Fest",
+                "Tech Symposium",
+                "Literary Week"
+            ],
+            "sports_facilities": [
+                "Basketball Court",
+                "Football Ground",
+                "Tennis Court"
+            ]
+        }
+    },
+    {
+        "college_name": "XYZ College",
+        "college_image": "https://i.ibb.co/QvDVy9W/c.jpg",
+        "college_rating": 4.2,
+        "admission_date": "2023-09-01",
+        "research_count": 80,
+        "details": {
+            "events": [
+                "College Fest",
+                "Tech Expo",
+                "Science Fair"
+            ],
+            "sports_facilities": [
+                "Cricket Ground",
+                "Swimming Pool",
+                "Badminton Court"
+            ]
+        }
+    },
+    {
+        "college_name": "PQR Institute",
+        "college_image": "https://i.ibb.co/gzVzvgQ/d.jpg",
+        "college_rating": 4.8,
+        "admission_date": "2023-08-25",
+        "research_count": 150,
+        "details": {
+            "events": [
+                "Cultural Carnival",
+                "Innovation Summit",
+                "Literary Festival"
+            ],
+            "sports_facilities": [
+                "Volleyball Court",
+                "Hockey Ground",
+                "Gymnasium"
+            ]
+        }
+    },
+    {
+        "college_name": "LMN University",
+        "college_image": "https://i.ibb.co/F3RnPcq/e.jpg",
+        "college_rating": 4.0,
+        "admission_date": "2023-09-10",
+        "research_count": 60,
+        "details": {
+            "events": [
+                "Annual Day Celebrations",
+                "Hackathon",
+                "Literary Meet"
+            ],
+            "sports_facilities": [
+                "Athletics Track",
+                "Table Tennis Room",
+                "Yoga Studio"
+            ]
+        }
+    },
+    {
+        "college_name": "RST College",
+        "college_image": "https://i.ibb.co/rb70VCX/b-All-Soulsquad.jpg",
+        "college_rating": 4.3,
+        "admission_date": "2023-09-05",
+        "research_count": 90,
+        "details": {
+            "events": [
+                "Cultural Week",
+                "Tech Fest",
+                "Science Symposium"
+            ],
+            "sports_facilities": [
+                "Soccer Field",
+                "Squash Court",
+                "Cycling Track"
+            ]
+        }
+    },
+    {
+        "college_name": "UVW School",
+        "college_image": "https://i.ibb.co/Vp2rs2J/f.png",
+        "college_rating": 3.9,
+        "admission_date": "2023-08-20",
+        "research_count": 40,
+        "details": {
+            "events": [
+                "Annual Sports Meet",
+                "Coding Competition",
+                "Debate Competition"
+            ],
+            "sports_facilities": [
+                "Golf Course",
+                "Swimming Pool",
+                "Chess Room"
+            ]
+        }
+    }
+]
