@@ -6,6 +6,8 @@ const MyCollege = () => {
   const [admissionData, setAdmissionData] = useState([]);
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
+  const [review, setReview] = useState('');
+  const [rating, setRating] = useState(0);
 
   useEffect(() => {
     const fetchAdmissionData = async () => {
@@ -21,6 +23,23 @@ const MyCollege = () => {
 
     fetchAdmissionData();
   }, [axiosSecure, user]);
+
+  const handleReviewSubmit = async () => {
+    try {
+      const response = await axiosSecure.post('/reviews', {
+        email: user.email,
+        review,
+        rating,
+      });
+
+      if (response.status === 200) {
+        console.log('Review submitted successfully.');
+        // You can perform additional actions here, such as updating the reviews section on the home page.
+      }
+    } catch (error) {
+      console.error('Error submitting review:', error);
+    }
+  };
 
   return (
     <div className='my-12 m-4 md:mx-0'>
@@ -40,6 +59,36 @@ const MyCollege = () => {
           ))}
         </div>
       )}
+
+      {/* Review Input Field */}
+      <div className="my-8">
+        <h2 className="text-2xl font-bold mb-4">Add a Review</h2>
+        <textarea
+          rows="4"
+          className="block w-full border rounded-md p-2 focus:outline-none focus:border-blue-500"
+          placeholder="Write your review..."
+          value={review}
+          onChange={(e) => setReview(e.target.value)}
+        />
+        <label className="block mt-4">
+          Rating:
+          <input
+            type="number"
+            min="1"
+            max="5"
+            className="block w-16 border rounded-md p-2 focus:outline-none focus:border-blue-500"
+            value={rating}
+            onChange={(e) => setRating(parseInt(e.target.value))}
+          />
+        </label>
+        <button
+          type="button"
+          onClick={handleReviewSubmit}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4"
+        >
+          Submit Review
+        </button>
+      </div>
     </div>
   );
 };
