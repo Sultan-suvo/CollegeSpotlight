@@ -10,6 +10,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import CollegeDetails from "../Pages/Colleges/CollegeDetails";
 import AdmissionForm from "../Pages/Admission/AdmissionForm";
 import BestCollegeDetails from "../Pages/Home/AllColleges/BestCollegeDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "college/:id",
-                element: <BestCollegeDetails></BestCollegeDetails>,
+                element: <PrivateRoute>
+                    <BestCollegeDetails></BestCollegeDetails>
+                    </PrivateRoute>,
             },
             {
                 path: "colleges",
