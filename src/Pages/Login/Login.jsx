@@ -184,7 +184,7 @@ const Login = () => {
                     </div>
                     <div
                         onClick={handleGoogleSignIn}
-                        className="flex items-center justify-center gap-2 w-full mx-6 h-12 border bg-blue-200 hover:bg-blue-500 border-slate-200 rounded-md cursor-pointer bg-blue-500 text-white"
+                        className="flex items-center justify-center gap-2 w-full mx-6 h-12 border bg-blue-200 hover:bg-blue-500 border-slate-200 rounded-md cursor-pointer  text-white"
                     >
                         <FaGoogle class="w-8 h-8 rounded-md"></FaGoogle>
                         <span>Continue with Google</span>
