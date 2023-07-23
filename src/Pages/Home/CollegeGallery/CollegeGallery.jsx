@@ -20,7 +20,7 @@ const CollegeGallery = () => {
   return (
     <div className='mx-4 mb-12'>
       <h2 className="text-2xl text-center my-12 font-bold mb-8">College Graduates Image Gallery</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {galleryImages.map((image) => (
           <div key={image.id} className="border rounded-lg overflow-hidden">
             <img src={image.imageUrl} alt={image.description} className="w-full h-48 object-cover" />
