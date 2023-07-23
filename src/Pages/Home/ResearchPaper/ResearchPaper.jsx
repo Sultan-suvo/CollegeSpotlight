@@ -17,11 +17,14 @@ const ResearchPaper = () => {
   }, [axiosSecure]);
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Recommended Research Papers</h2>
+    <div className="bg-white m-4 md:m-0 p-6 rounded-lg text-center shadow-md my-12">
+      <h2 className="text-3xl text-center my-12 font-bold mb-8">Recommended Research Papers</h2>
       <ul className="space-y-4">
         {researchPapers.map((paper, index) => (
-          <li key={index} className="flex items-center">
+          <li
+            key={index}
+            className="flex items-center bg-blue-100 border border-blue-200 rounded-lg p-4"
+          >
             <a
               href={paper.link}
               target="_blank"

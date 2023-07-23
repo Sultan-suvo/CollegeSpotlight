@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation()
 
     if (loading) {
-        'a'
+        <div className="animate-pulse flex space-x-4"></div>
     }
     if (user) {
         return children
