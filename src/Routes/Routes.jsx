@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Colleges from "../Pages/Colleges/Colleges";
@@ -8,40 +8,50 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import CollegeDetails from "../Pages/Colleges/CollegeDetails";
+import AdmissionForm from "../Pages/Admission/AdmissionForm";
+import BestCollegeDetails from "../Pages/Home/AllColleges/BestCollegeDetails";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
                 path: "/",
-                element: <Home></Home>,  
+                element: <Home></Home>,
+            },
+            {
+                path: "college/:id",
+                element: <BestCollegeDetails></BestCollegeDetails>,
             },
             {
                 path: "colleges",
-                element: <Colleges></Colleges>,  
+                element: <Colleges></Colleges>,
             },
             {
                 path: "showDetails",
-                element: <CollegeDetails></CollegeDetails>,  
+                element: <CollegeDetails></CollegeDetails>,
             },
             {
                 path: "admission",
-                element: <Admission></Admission>,  
+                element: <Admission></Admission>,
+            },
+            {
+                path: "admission/:collegeName",
+                element: <AdmissionForm></AdmissionForm>,
             },
             {
                 path: "myCollege",
-                element: <MyCollege></MyCollege>,  
+                element: <MyCollege></MyCollege>,
             },
             {
                 path: "login",
-                element: <Login></Login>,  
+                element: <Login></Login>,
             },
             {
                 path: "register",
-                element: <Register></Register>,  
+                element: <Register></Register>,
             },
         ]
     },
