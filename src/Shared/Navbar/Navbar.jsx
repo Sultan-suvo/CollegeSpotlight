@@ -72,9 +72,16 @@ const Navbar = () => {
                 >
                   My College
                 </NavLink>
+                <NavLink
+                  to="/profile"
+                  className="text-white me-2 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  activeClassName="bg-purple-700 text-white"
+                >
+                  {user.displayName}
+                </NavLink>
                 <div className="flex mt-2 items-center justify-center gap-6">
                   <img
-                    title={user.displayName}
+                  title={user.displayName}
                     className="w-12 h-12 rounded-full"
                     src={user.photoURL}
                     alt=""
@@ -130,6 +137,13 @@ const Navbar = () => {
                   activeClassName="bg-purple-700 text-white"
                 >
                   My College
+                </NavLink>
+                <NavLink
+                  to="/profile"
+                  className="text-white me-2 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  activeClassName="bg-purple-700 text-white"
+                >
+                  {user.displayName}
                 </NavLink>
                 <div className="flex mt-2 items-center justify-center gap-6">
                   <img

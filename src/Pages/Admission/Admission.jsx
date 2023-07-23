@@ -27,22 +27,22 @@ const colleges = [
 const Admission = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 shadow-md rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">College Names</h2>
-        <ul className="space-y-2">
-          {colleges.map((collegeName) => (
-            <li
-              key={collegeName}
-              className="hover:bg-gray-100 rounded-lg p-2 cursor-pointer"
-            >
-              <Link href={`/admission/${collegeName}`} className="text-blue-500">
-                {collegeName}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="bg-white p-8 shadow-md rounded-lg">
+      <h2 className="text-2xl font-bold mb-4">College Names</h2>
+      <ul className="space-y-2">
+        {colleges.map((collegeName) => (
+          <li
+            key={collegeName}
+            className="hover:bg-gray-100 rounded-lg p-2 cursor-pointer"
+          >
+            <Link to={{ pathname: `/admission/${collegeName}`, state: { collegeName } }} className="text-blue-500">
+              {collegeName}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
+  </div>
   );
 };
 

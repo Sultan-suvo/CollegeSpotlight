@@ -15,7 +15,7 @@ const Colleges = () => {
   }, [axiosSecure]);
 
   return (
-    <div className="mt-24">
+    <div className="mt-24 mx-4">
       <div className="text-center">
         <h1 className="text-5xl font-bold mb-4">Top Colleges</h1>
       </div>
